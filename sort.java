@@ -10,7 +10,7 @@ class sort {
         String arr[] = new String[n];
         System.out.println("Enter the strings");
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextLine();
+            arr[i]= sc.nextLine();
         }
         Arrays.sort(arr);
         System.out.println("Sorted strings are:");
