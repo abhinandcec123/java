@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+// Abstract class
+abstract class Shape {
+    abstract void findArea();   // Abstract method
+}
+
+// Rectangle class
+class Rectangle extends Shape {
+    double length, breadth;
+
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+
+    void findArea() {
+        double area = length * breadth;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+// Circle class
+class Circle extends Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    void findArea() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+// Square class
+class Square extends Shape {
+    double side;
+
+    Square(double s) {
+        side = s;
+    }
+
+    void findArea() {
+        double area = side * side;
+        System.out.println("Area of Square: " + area);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Rectangle
+        System.out.print("Enter length of rectangle: ");
+        double l = sc.nextDouble();
+        System.out.print("Enter breadth of rectangle: ");
+        double b = sc.nextDouble();
+        Shape rect = new Rectangle(l, b);
+        rect.findArea();
+
+        // Circle
+        System.out.print("\nEnter radius of circle: ");
+        double r = sc.nextDouble();
+        Shape circle = new Circle(r);
+        circle.findArea();
+
+        // Square
+        System.out.print("\nEnter side of square: ");
+        double s = sc.nextDouble();
+        Shape square = new Square(s);
+        square.findArea();
+
+        sc.close();
+    }
+}
